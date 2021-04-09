@@ -10,24 +10,27 @@ public class Player {
 
     // FIX ALL OF BELOW TO MATCH ABOVE INSTANCE VARIABLES
 
-    public Player(Deck deck, Card[] cardsInHand, Card[] graveyard, String name, Card[] monstersOnField, Card[] spellsOnField, Card[] trapsOnField, int lifePoints) {
+    public Player(String name) {
+        this.name = name;
+    }
+
+    public Player(Deck deck, int lifePoints, Card[] cardsInHand, Card[] graveyard, Card[] monstersOnField, Card[] spellsOnField, Card[] trapsOnField) {
         this.lifePoints = lifePoints;
         this.cardsInHand = cardsInHand;
         this.graveyard = graveyard;
         this.deck = deck;
-        this.name = name;
         this.monstersOnField = monstersOnField;
         this.spellsOnField = spellsOnField;
         this.trapsOnField = trapsOnField;
     }
 
-    public Deck getDecK() {
-        return this.deck;
-    }
+    // public Deck getDeck() {
+    //     return this.deck;
+    // }
 
-    public void setDeck(Deck deck) {
-        this.deck = deck;
-    }
+    // public void setDeck(Deck deck) {
+    //     this.deck = deck;
+    // }
 
     public String getName() {
         return this.name;
@@ -83,5 +86,9 @@ public class Player {
 
     public void setGraveyard(Card[] graveyard) {
         this.graveyard = graveyard;
+    }
+
+    public String toString() {
+        return "Player: " + this.getName();
     }
 }
